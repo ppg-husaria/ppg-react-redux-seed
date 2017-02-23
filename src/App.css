@@ -9,12 +9,13 @@
 
 header {
   background-color: #222;
-  height: 150px;
-  padding: 20px;
+  height: 160px;
   color: white;
+  padding: 10px;
 }
 
 footer {
+  color: white;
   background-color: #222;
   position: absolute;
   bottom: 0;
