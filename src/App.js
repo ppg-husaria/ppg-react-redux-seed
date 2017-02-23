@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Jumbotron } from 'react-bootstrap';
+import { Jumbotron, PageHeader, Grid } from 'react-bootstrap';
 import logo from './logo.svg';
 import './App.css';
 
@@ -29,11 +29,14 @@ class AppContent extends Component {
       facebook: "https://www.facebook.com/PPGHusaria"
     };
 
-    return <Jumbotron>
-      <article>
-        Check us out on <a href={links.github}>Github</a> and <a href={links.facebook}>Facebook</a>
-      </article>
-    </Jumbotron>
+    return <Grid>
+      <PageHeader>Home page <small>(the only page)</small></PageHeader>
+      <Jumbotron>
+        <article>
+          Check us out on <a href={links.github}>Github</a> and <a href={links.facebook}>Facebook</a>
+        </article>
+      </Jumbotron>
+    </Grid>
   }
 }
 
