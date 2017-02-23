@@ -19,8 +19,13 @@ it('has proper content', () => {
 
 it('has proper footer', () => {
   const app = mount(<App />);
-  const footer = <footer>Copyright © 2017 Patryk Wertka &and; Mateusz Janota</footer>;
 
   expect(app.find(<footer />)).toBeTruthy();
-  expect(app.contains(footer)).toBeTruthy();
+
+  [ ["Patryk Wertka", "https://www.facebook.com/spartanPAGE"],
+    ["Mateusz Janota", "https://www.facebook.com/lexonouri"] 
+  ].map((authorData) => {
+    const [name, link] = authorData;
+    expect(app.find(<a href={link}>{name}</a>)).toBeTruthy();
+  });
 })
