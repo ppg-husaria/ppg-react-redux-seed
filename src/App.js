@@ -1,26 +1,8 @@
 import React, { Component } from 'react';
 import { Jumbotron, PageHeader, Grid } from 'react-bootstrap';
-import logo from './logo.svg';
-import './App.css';
+import { AppHeader, AppFooter } from './components';
 
-function intersperse(arr, sep) {
-    if (arr.length === 0) {
-        return [];
-    }
-
-    return arr.slice(1).reduce(function(xs, x, i) {
-        return xs.concat([sep, x]);
-    }, [arr[0]]);
-}
-
-class AppHeader extends Component {
-  render() {
-    return <header>
-      <img src={logo} className="App-logo" alt="logo" />
-      <h2>Welcome to React</h2>
-    </header>
-  }
-}
+import './styles/App.css';
 
 class AppContent extends Component {
   render() {
@@ -37,21 +19,6 @@ class AppContent extends Component {
         </article>
       </Jumbotron>
     </Grid>
-  }
-}
-
-class AppFooter extends Component {
-  render() {
-    const createAuthorLink = (name, link, i) => <a href={link} key={i}>{name}</a>
-
-    const authors = intersperse([
-      ["Patryk Wertka", "https://www.facebook.com/spartanPAGE"],
-      ["Mateusz Janota", "https://www.facebook.com/lexonouri"]
-    ].map((author, i) => createAuthorLink(...author, i)), " ∧ ");
-
-    return <footer>
-      Copyright © 2017 {authors}
-    </footer>
   }
 }
 
