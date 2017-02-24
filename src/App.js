@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Jumbotron, PageHeader, Grid } from 'react-bootstrap';
 import { AppHeader, AppFooter } from './components';
-
 import './styles/App.css';
 
 class AppContent extends Component {
@@ -12,10 +11,10 @@ class AppContent extends Component {
     };
 
     return <Grid>
-      <PageHeader>Home page <small>(the only page)</small></PageHeader>
+      <PageHeader>todo: page header</PageHeader>
       <Jumbotron>
         <article>
-          Check us out on <a href={links.github}>Github</a> and <a href={links.facebook}>Facebook</a>
+          {this.props.children}
         </article>
       </Jumbotron>
     </Grid>
@@ -27,7 +26,7 @@ class App extends Component {
     return (
       <div className="App">
         <AppHeader />
-        <AppContent />
+        <AppContent>{this.props.children}</AppContent>
         <AppFooter />
       </div>
     );

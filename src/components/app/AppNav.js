@@ -5,8 +5,8 @@ import { LinkContainer } from 'react-router-bootstrap';
 export default class AppNav extends React.Component {
   render() {
     const items = [
-      ["#", <p>NavItem 1</p>],
-      ["#", <p>NavItem 2</p>]
+      ["/Home", <p>Home</p>],
+      ["/Help", <p>Help</p>]
     ];
 
     const renderableItems = items.map((item, i) => {
