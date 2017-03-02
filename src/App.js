@@ -8,7 +8,7 @@ export const HelloWorldComponent = () => {
 }
 
 export const PageNotFoundComponent = () => {
-  return <h1>You've entered wrong route, idiot</h1>
+  return <h1>You have entered wrong route, idiot</h1>
 }
 
 //2nd way to create component - extend React.Component and override render()
