@@ -1,36 +1,25 @@
 import React, { Component } from 'react';
 import { Jumbotron, PageHeader, Grid } from 'react-bootstrap';
-import { AppHeader, AppFooter } from './components';
 import './styles/App.css';
 
-class AppContent extends Component {
-  render() {
-    const links = {
-      github: "https://github.com/ppg-husaria/pg_blog",
-      facebook: "https://www.facebook.com/PPGHusaria"
-    };
-
-    return <Grid>
-      <PageHeader>todo: page header</PageHeader>
-      <Jumbotron>
-        <article>
-          {this.props.children}
-        </article>
-      </Jumbotron>
-    </Grid>
-  }
+//1st way to create component - use regular function
+export const HelloWorldComponent = () => {
+  return <h1>Hello World!</h1>
 }
 
-class App extends Component {
+export const PageNotFoundComponent = () => {
+  return <h1>You've entered wrong route, idiot</h1>
+}
+
+//2nd way to create component - extend React.Component and override render()
+export class App extends Component {
   render() {
     return (
       <div className="App">
-        <AppHeader />
-        <AppContent>{this.props.children}</AppContent>
-        <AppFooter />
+        \/ \/ App: rendered children \/ \/
+        {this.props.children}
+        /\ /\ App: rendered children /\ /\
       </div>
     );
   }
 }
-
-export default App;
